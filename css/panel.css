@@ -1,0 +1,194 @@
+/* =========================================================
+   HORIZON - PANEL (pago, mis pedidos, productos, ventas)
+   Usa la misma paleta y tipografías que el resto del sitio.
+========================================================= */
+
+:root {
+    --primary: #1677ff;
+    --primary-light: #4b96ff;
+    --primary-dark: #0756c9;
+    --text: #f4f8ff;
+    --text-soft: #aabbd3;
+    --background: #061326;
+    --surface: rgba(10, 29, 53, 0.88);
+    --surface-solid: #0b1d35;
+    --border: rgba(86, 153, 255, 0.18);
+    --shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+    --ok: #3ddc97;
+    --err: #ff7b72;
+    --warn: #ffc857;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "DM Sans", system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- barra superior ---------- */
+.top {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 12px 4%;
+    background: rgba(6, 19, 38, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.top .logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+    padding: 3px 9px;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 10px;
+}
+
+.top .tag {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
+
+.top a:not(.logo-link) {
+    color: var(--text-soft);
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.25s;
+}
+
+.top a:not(.logo-link):hover { color: var(--primary-light); }
+.top .sp { flex: 1; }
+.top .user {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 14px;
+}
+
+/* ---------- contenedores ---------- */
+.wrap { max-width: 1040px; margin: 32px auto; padding: 0 20px 40px; }
+
+.box {
+    max-width: 560px;
+    margin: 40px auto;
+    padding: 34px;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+
+h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; }
+h1 { font-size: 34px; margin-bottom: 18px; }
+h2 { font-size: 28px; }
+h3 { font-size: 19px; margin-bottom: 6px; }
+p { margin: 8px 0; line-height: 1.5; }
+
+.back-link, .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s;
+}
+.back-link:hover, .back-button:hover { border-color: var(--primary); color: var(--primary-light); transform: translateX(-2px); }
+
+/* ---------- tarjetas ---------- */
+.card {
+    padding: 22px;
+    margin-bottom: 18px;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.grid .card h2 { margin: 8px 0 14px; }
+
+/* ---------- tablas ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+th { background: rgba(22, 119, 255, 0.12); color: var(--primary-light); font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; }
+tr:last-child td { border-bottom: 0; }
+
+/* ---------- botones y formularios ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.btn.sec { background: #3a4a62; }
+.btn.red { background: #c0392b; }
+.btn.green { background: #1e8f5a; }
+
+input, select {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+}
+select option { color: #102d55; }
+input:focus, select:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+input[type=number] { width: 76px; }
+
+/* ---------- mensajes y etiquetas ---------- */
+.ok  { padding: 11px 15px; border-radius: 12px; background: rgba(61, 220, 151, 0.12); color: var(--ok); border: 1px solid rgba(61, 220, 151, 0.3); }
+.err { padding: 11px 15px; border-radius: 12px; background: rgba(255, 123, 114, 0.12); color: var(--err); border: 1px solid rgba(255, 123, 114, 0.3); }
+.muted { color: var(--text-soft); font-size: 13px; }
+.total { font-size: 20px; margin: 14px 0; }
+.badge { padding: 3px 10px; border-radius: 999px; font-family: "DM Sans", sans-serif; font-size: 12px; font-weight: 600; background: rgba(255, 255, 255, 0.1); }
+.badge.cobrado { background: rgba(61, 220, 151, 0.18); color: var(--ok); }
+.badge.pendiente { background: rgba(255, 200, 87, 0.16); color: var(--warn); }
+.badge.anulado, .badge.rechazado { background: rgba(255, 123, 114, 0.16); color: var(--err); }
+
+.opciones { color: var(--text-soft); font-size: 12px; line-height: 1.5; margin-top: 4px; }
+
+.cart-notification { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 12px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.cart-notification.show { opacity: 1; }
+
+ul { padding-left: 20px; line-height: 1.7; }
+.card form { margin-top: 10px; }
+.card .btn { margin: 4px 6px 4px 0; }

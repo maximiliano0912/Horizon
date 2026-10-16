@@ -1,0 +1,654 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+
+    --dark: #111827;
+    --text: #1f2937;
+    --text-light: #6b7280;
+
+    --border: #e5e7eb;
+    --background: #f7f9fc;
+    --white: #ffffff;
+
+    --radius: 14px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.auth-header {
+    width: 94%;
+    max-width: 1450px;
+    height: 82px;
+
+    margin: 22px auto 0;
+
+    padding: 0 28px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.logo-text strong span {
+    color: var(--primary);
+}
+
+.logo-text small {
+    font-size: 10px;
+    color: var(--text-light);
+
+    margin-top: 3px;
+}
+
+.back-home {
+    text-decoration: none;
+    color: var(--text-light);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.2s;
+}
+
+.back-home:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.register-page {
+    padding: 65px 20px 80px;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.register-heading h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(36px, 5vw, 52px);
+
+    color: var(--dark);
+
+    margin-bottom: 12px;
+}
+
+.register-heading p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 32px;
+
+    margin-bottom: 22px;
+
+    display: grid;
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.035);
+}
+
+
+/* NUMBER */
+
+.section-number {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 13px;
+}
+
+
+/* SECTION TITLE */
+
+.form-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid var(--border);
+
+    margin-bottom: 25px;
+}
+
+.form-section-title h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    color: var(--dark);
+
+    margin-bottom: 5px;
+}
+
+.form-section-title p {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.form-section-title > i {
+    color: var(--primary);
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--dark);
+
+    margin-bottom: 8px;
+}
+
+.form-group label span {
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: 11px;
+
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper > i {
+    position: absolute;
+    left: 15px;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: #fafbfc;
+
+    padding: 0 15px 0 43px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    color: var(--dark);
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    border-color: var(--primary);
+
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.input-wrapper input::placeholder {
+    color: #a1a8b3;
+}
+
+.input-wrapper select {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.password-toggle {
+    position: absolute;
+
+    right: 13px;
+
+    border: none;
+    background: transparent;
+
+    color: #9ca3af;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.password-toggle:hover {
+    color: var(--primary);
+}
+
+.password-toggle + * {
+    padding-right: 45px;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 22px 25px;
+
+    margin-bottom: 22px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.checkbox + .checkbox {
+    margin-top: 13px;
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+
+    background: white;
+
+    position: relative;
+}
+
+.checkbox input:checked + .checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox input:checked + .checkmark::after {
+    content: "✓";
+
+    position: absolute;
+
+    left: 3px;
+    top: -1px;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.checkbox a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.checkbox a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.register-submit {
+    width: 100%;
+    height: 56px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    transition: 0.25s;
+}
+
+.register-submit:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   LOGIN LINK
+========================================================= */
+
+.login-link {
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    margin-top: 22px;
+}
+
+.login-link a {
+    color: var(--primary);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 5px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.simple-footer {
+    width: 94%;
+    max-width: 980px;
+
+    margin: 0 auto 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+.simple-footer div {
+    display: flex;
+    gap: 20px;
+}
+
+.simple-footer a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.simple-footer a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .auth-header {
+        height: 72px;
+
+        padding: 0 18px;
+
+        margin-top: 12px;
+    }
+
+    .back-home {
+        font-size: 0;
+    }
+
+    .back-home i {
+        font-size: 17px;
+    }
+
+    .register-page {
+        padding: 45px 15px 60px;
+    }
+
+    .register-heading {
+        margin-bottom: 30px;
+    }
+
+    .register-heading h1 {
+        font-size: 38px;
+    }
+
+    .form-section {
+        grid-template-columns: 1fr;
+
+        padding: 24px 20px;
+
+        gap: 15px;
+    }
+
+    .section-number {
+        width: 40px;
+        height: 40px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .form-section-title h2 {
+        font-size: 22px;
+    }
+
+    .simple-footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .simple-footer div {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
+
